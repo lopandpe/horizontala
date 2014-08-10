@@ -15,3 +15,9 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+Route::get('template/{nombre}', function($nombre){
+   $nombre = str_replace('-', ' ', $nombre);
+   return View::make('template')->with('nombre', $nombre); 
+});
+
+Route::resource('admin', 'AdminController');
