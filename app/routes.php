@@ -11,13 +11,19 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-Route::get('template/{nombre}', function($nombre){
-   $nombre = str_replace('-', ' ', $nombre);
-   return View::make('template')->with('nombre', $nombre); 
-});
+Route::get('/', array('as' => 'index', 'uses' => 'AnarchyController@index'));
 
-Route::resource('admin', 'AdminController');
+// form-login.
+Route::get('login', array('as' => 'login', 'uses' => 'AdminController@showLogin'));
+
+// validate form-login
+Route::post('login', array('as' => 'post_login', 'uses' => 'AdminController@postLogin'));
+
+// AUTHENTICATION REQUIRED
+Route::group(array('before' => 'auth'), function()
+{
+    Route::get('admin', array('as' => 'admin', 'uses' => 'AdminController@index'));
+    
+    // form-logout
+    Route::get('logout', array('as' => 'logout', 'uses' => 'AdminController@logout'));
+});

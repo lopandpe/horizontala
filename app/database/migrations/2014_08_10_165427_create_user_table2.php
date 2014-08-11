@@ -11,13 +11,11 @@ class CreateUserTable2 extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('users2', function($table) {
+        Schema::create('users', function($table) {
                     $table->increments('id');
-
-                    $table->string('email');
+                    $table->string('username', 100);
                     $table->string('password');
-                    $table->string('campo3');
-                    $table->string('full_name');
+                    $table->string('authentication_token')->nullable();
                     $table->timestamps();
                 });
     }
@@ -28,7 +26,7 @@ class CreateUserTable2 extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('users2');
+        Schema::drop('users');
     }
 
 }
