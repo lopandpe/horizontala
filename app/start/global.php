@@ -79,3 +79,20 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+
+/*
+|--------------------------------------------------------------------------
+| Require The Translation File
+|--------------------------------------------------------------------------
+|
+| Load the translation file for making the webpage bilingue.
+| Files that containt the translation are in the path: 
+| 
+| /app/lang/en|es/{section}.php
+|
+| {section}.php file can be updated with a text editor.
+|
+*/
+
+require app_path().'/translations.php';

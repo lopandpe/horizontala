@@ -23,6 +23,8 @@ Route::post('login', array('as' => 'post_login', 'uses' => 'AdminController@post
 Route::group(array('before' => 'auth'), function()
 {
     Route::get('admin', array('as' => 'admin', 'uses' => 'AdminController@index'));
+    Route::get('admin/new', array('as' => 'new_project', 'uses' => 'AdminController@newProject'));
+    Route::post('admin/new', array('as' => 'post_project', 'uses' => 'AdminController@postProject'));
     
     // form-logout
     Route::get('logout', array('as' => 'logout', 'uses' => 'AdminController@logout'));

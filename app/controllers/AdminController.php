@@ -8,7 +8,7 @@ class AdminController extends \BaseController {
      * @return Response
      */
     public function index() {
-        return View::make('hello');
+        return View::make('admin/projects');
     }
 
     /**
@@ -17,7 +17,7 @@ class AdminController extends \BaseController {
     public function showLogin() {
         // check if the user is already authenticated
         if (Auth::check()) {
-            return Redirect::to('/');
+            return Redirect::to('admin/projects');
         }
         // show the form-login view
         return View::make('admin/login');
@@ -58,12 +58,72 @@ class AdminController extends \BaseController {
     
     
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
+     * Form to add a new project
      */
-    public function create() {
-        return View::make('admin/form');
+    public function newProject() {
+        // check if the user is already authenticated
+        if (Auth::check()) {
+            $project = new Project;
+            $data = null;
+            return View::make('admin/new_project')->with('project', $project);
+        }
+        // show the form-login view
+        return View::make('admin/login');
+    }    
+    /**
+     * Validate and save project or return to the view
+     */
+    public function postProject() {
+
+        $project = new Project;
+        
+
+        // take all the form data
+        $data = Input::all();
+        // isValid is defined in Project.php
+        if ($project->isValid($data)){ 
+            
+            
+            //If there is a image in the upload
+            if(is_object(Input::file('image_or_logo')) && Input::file('image_or_logo')->getSize() > 0){
+                
+                $file = Input::file('image_or_logo');
+                
+                $extension = $file->getClientOriginalExtension();
+                
+                //We want to save the image at /assets/img/projects with the name of the project without white spaces
+                $name = str_replace(' ', '-',$data['name']);
+                
+                
+                //concat the extension
+                $name .= '.'.$extension;
+                
+                //destination folder
+                $dest = public_path().'/assets/img/projects/';
+                
+                //moving the file
+                $file->move($dest, $name);
+                
+                //we save in DB the route of the file
+                $data['image_or_logo'] = '/assets/img/projects/'.$name.'.'.$extension;
+            }
+            
+                
+            
+            // if all data is valid, we store in $project 
+            $project->fill($data);
+            // and we save it in DB
+            $project->save();
+            
+            //Redirect to the creating projects view with an empty project, and a success message
+            $project = new Project;
+            return View::make('admin/new_project')->with('project', $project)->with('success', '¡Añadido con éxito!');
+        }
+        else
+        {
+            // if $data is no valid, we recharge the view with error messages
+            return View::make('admin/new_project')->with('project', $project)->with('data', $data)->withErrors($project->errors);
+        }
     }
 
     /**
