@@ -35,5 +35,21 @@ return array(
     'released' => 'Released',
     'created_at' => 'Created at',
     'updated_at' => 'Updated at',
-    'create' => 'Create'
+    'create' => 'Create',
+    'about_us' => 'About horizontala.info',
+    'who' => 'About us?',
+    'who_2' => 'Not translated',
+    'what' => 'What is this?',
+    'what_2' => 'Not translated',
+    'find' => 'What you will find here?',
+    'find_2' => 'Not translated',
+    'unfind' => 'What you will not find here?',
+    'unfind_2' => 'Not translated',
+    'how' => 'How it works',
+    'how_2' => 'Not translated',
+    'support' => 'How to help us?',
+    'support_2' => 'Not translated',
+    'calendar' => 'Calendar',
+    'language' => 'Language',
+    'links' => 'Links'
 );

@@ -16,25 +16,25 @@
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">blablabla1<b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ trans('commonTexts.about_us') }}<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a data-toggle="modal" href="#what">blablabla</a></li>
-                                    <li><a data-toggle="modal" href="#how">blablabla</a></li>
-                                    <li><a data-toggle="modal" href="#find">blablabla</a></li>
-                                    <li><a data-toggle="modal" href="#notfind">blablabla</a></li>
-                                    <li><a data-toggle="modal" href="#about">blablabla</a></li>
-                                    <li><a data-toggle="modal" href="#help">blablabla</a></li>
+                                    <li><a data-toggle="modal" href="#what">{{ trans('commonTexts.who') }}</a></li>
+                                    <li><a data-toggle="modal" href="#how">{{ trans('commonTexts.what') }}</a></li>
+                                    <li><a data-toggle="modal" href="#find">{{ trans('commonTexts.find') }}</a></li>
+                                    <li><a data-toggle="modal" href="#notfind">{{ trans('commonTexts.unfind') }}</a></li>
+                                    <li><a data-toggle="modal" href="#about">{{ trans('commonTexts.how') }}</a></li>
+                                    <li><a data-toggle="modal" href="#help">{{ trans('commonTexts.support') }}</a></li>
                                 </ul>
                             </li>
 
 
                             <li><a href="">Blog</a></li>
-                            <li><a href="">Enlaces</a></li>
+                            <li><a href="">{{ trans('commonTexts.links') }}</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">blablabla2<b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ trans('commonTexts.language') }}<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">ES</a></li>
-                                    <li><a href="#">EN</a></li>
+                                    <li><a href="{{ Request::url() }}?lang=es">ES</a></li>
+                                    <li><a href="{{ Request::url() }}?lang=en">EN</a></li>
                                 </ul>
                             </li>
 
