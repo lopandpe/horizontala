@@ -8,6 +8,9 @@
 
         {{-- Bootstrap --}}
         <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+        
+        {{-- Custom css --}}
+        <link href="{{ asset('assets/css/anarchy.css') }}" rel="stylesheet">
 
         {{-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --}}
         {{-- WARNING: Respond.js doesn't work if you view the page via file:// --}}
@@ -24,9 +27,15 @@
 
             @yield('content')
         </div>
+
+
+        @include('footer')
+
+
         {{-- jQuery (necessary for Bootstrap's JavaScript plugins) --}}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         {{-- Include all compiled plugins (below), or include individual files as needed --}}
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/horizontala.js') }}"></script>
     </body>
 </html>

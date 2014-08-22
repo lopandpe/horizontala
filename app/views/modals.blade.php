@@ -5,10 +5,10 @@
                <div class="modal-content">
                  <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title">blablabla</h4>
+                   <h4 class="modal-title">{{ trans('commonTexts.who') }}</h4>
                  </div>
                  <div class="modal-body">
-                  blablabla
+                  {{ trans('commonTexts.who_2') }}
                  </div>
                </div><!-- /.modal-content -->
              </div><!-- /.modal-dialog -->
@@ -18,10 +18,10 @@
                <div class="modal-content">
                  <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title">blablabla</h4>
+                   <h4 class="modal-title">{{ trans('commonTexts.what') }}</h4>
                  </div>
                  <div class="modal-body">
-                  blablabla
+                  {{ trans('commonTexts.what_2') }}
                  </div>
                </div><!-- /.modal-content -->
              </div><!-- /.modal-dialog -->
@@ -31,10 +31,10 @@
                <div class="modal-content">
                  <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title">blablabla</h4>
+                   <h4 class="modal-title">{{ trans('commonTexts.find') }}</h4>
                  </div>
                  <div class="modal-body">
-                  blablabla
+                  {{ trans('commonTexts.find_2') }}
                  </div>
                </div><!-- /.modal-content -->
              </div><!-- /.modal-dialog -->
@@ -44,10 +44,10 @@
                <div class="modal-content">
                  <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title">blablabla</h4>
+                   <h4 class="modal-title">{{ trans('commonTexts.unfind') }}</h4>
                  </div>
                  <div class="modal-body">
-                 blablabla
+                 {{ trans('commonTexts.unfind_2') }}
                  </div>
                </div><!-- /.modal-content -->
              </div><!-- /.modal-dialog -->
@@ -57,10 +57,10 @@
                <div class="modal-content">
                  <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title">blablabla</h4>
+                   <h4 class="modal-title">{{ trans('commonTexts.support') }}how</h4>
                  </div>
                  <div class="modal-body">
-                  blablabla
+                  {{ trans('commonTexts.how_2') }}
                  </div>
                </div><!-- /.modal-content -->
              </div><!-- /.modal-dialog -->
@@ -70,10 +70,10 @@
                <div class="modal-content">
                  <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title">blablabla</h4>
+                   <h4 class="modal-title">{{ trans('commonTexts.support') }}</h4>
                  </div>
                  <div class="modal-body">
-                 blablabla
+                 {{ trans('commonTexts.support_2') }}
                  </div>
                </div><!-- /.modal-content -->
              </div><!-- /.modal-dialog -->

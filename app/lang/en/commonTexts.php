@@ -46,5 +46,22 @@ return array(
     'updated_at' => 'Updated at',
     'create' => 'Create',
     'revised' => 'Revised at',
-    'errorValidation' => 'The following errors have occurred:'
+    'errorValidation' => 'The following errors have occurred:',
+    'about_us' => 'About horizontala.info',
+    'who' => 'About us?',
+    'who_2' => 'Not translated',
+    'what' => 'What is this?',
+    'what_2' => 'Not translated',
+    'find' => 'What you will find here?',
+    'find_2' => 'Not translated',
+    'unfind' => 'What you will not find here?',
+    'unfind_2' => 'Not translated',
+    'how' => 'How it works',
+    'how_2' => 'Not translated',
+    'support' => 'How to help us?',
+    'support_2' => 'Not translated',
+    'calendar' => 'Calendar',
+    'language' => 'Language',
+    'links' => 'Links',
+    'placeholder' => 'What are you looking for?'
 );
