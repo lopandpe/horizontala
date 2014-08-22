@@ -36,7 +36,25 @@ body{
         }
     }
 }
-
+@media(max-width: 500px){
+    body{
+        background-color: #FFF;
+    }
+    #searcher{
+        max-width: 100%;
+        background-image: none;
+        text-align: center;
+        form{
+            top: auto;
+            left: auto;
+            #searcher_input{
+                width: 90%; 
+                margin: 0px auto;
+                margin-top: 40%;
+            }
+        }
+    }
+}
 #new_project{
         h1{
             text-align: center;

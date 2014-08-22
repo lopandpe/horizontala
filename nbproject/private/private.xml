@@ -3,15 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/horizontala/app/views/topnav.blade.php</file>
-            <file>file:/C:/xampp/htdocs/horizontala/app/lang/es/commonTexts.php</file>
-            <file>file:/C:/xampp/htdocs/horizontala/app/views/modals.blade.php</file>
-            <file>file:/C:/xampp/htdocs/horizontala/app/lang/en/commonTexts.php</file>
-            <file>file:/C:/xampp/htdocs/horizontala/app/views/layout.blade.php</file>
+            <file>file:/C:/xampp/htdocs/horizontala/public/assets/scss/anarchy.scss</file>
             <file>file:/C:/xampp/htdocs/horizontala/public/assets/css/anarchy.css</file>
-            <file>file:/C:/xampp/htdocs/horizontala/public/assets/css/anarchy.scss</file>
-            <file>file:/C:/xampp/htdocs/horizontala/public/assets/js/horizontala.js</file>
-            <file>file:/C:/xampp/htdocs/horizontala/app/views/footer.blade.php</file>
         </group>
     </open-files>
 </project-private>
