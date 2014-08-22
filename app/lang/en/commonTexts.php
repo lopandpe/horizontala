@@ -51,5 +51,6 @@ return array(
     'support_2' => 'Not translated',
     'calendar' => 'Calendar',
     'language' => 'Language',
-    'links' => 'Links'
+    'links' => 'Links',
+    'placeholder' => 'What are you looking for?'
 );

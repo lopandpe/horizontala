@@ -4,12 +4,39 @@
     Author     : lopandpe
     Description:
     Purpose of the stylesheet follows.
+
 */
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+}
+
 #wrapper {
-  margin-top: 60px;
-  padding: 30px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
+}
+
+#searcher {
+  background-image: url("../img/fondo_busqueda.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin: 0px auto;
+  max-width: 500px;
+  padding-bottom: 290px;
+  width: 500px;
+}
+#searcher form {
+  line-height: normal;
+  position: relative;
+  left: 62px;
+  top: 236px;
+}
+#searcher form #searcher_input {
+  width: 355px;
+  padding: 5px;
 }
 
 #new_project h1 {
@@ -29,5 +56,24 @@
   padding: 10px;
 }
 
-
-/** FOOTER **/
+/* FOOTER  */
+#footer {
+  width: 100%;
+  text-align: center;
+}
+#footer ul {
+  padding: 0px;
+  margin: 0px auto;
+}
+#footer ul li {
+  position: relative;
+  list-style: none;
+  display: inline-block;
+  cursor: pointer;
+}
+#footer ul li a {
+  display: block;
+  font-size: 16px;
+  margin: 0px 10px;
+  text-decoration: none;
+}

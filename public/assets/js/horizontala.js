@@ -1,9 +1,9 @@
 $(document).ready(function() {
     var alturaventana = $(window).height();
-    var alturaCuerpo = $('#cuerpo').height();
-
+    var alturaCuerpo = $('#wrapper').height();
     var margin = alturaventana - alturaCuerpo;
-
+    
+    console.log(alturaventana +' - '+ alturaCuerpo +' = '+margin);
     if (margin > 100) {
         margin = margin - 100;
         margin = margin + "px";
@@ -13,7 +13,7 @@ $(document).ready(function() {
         margin = margin + "px";
         $('#footer').css({'margin-top': margin});
     }
-
+    console.log(margin);
     function colocarPie() {
         var alturaventana = $(window).height();
         var alturaCuerpo = $('#wrapper').height();
