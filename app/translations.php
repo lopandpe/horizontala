@@ -7,7 +7,7 @@ $localesAllowed = array('es', 'en');
 // Set default language.
 // It should matchs with $localesAllowed array.
 
-define('DEFAULT_LANG', 'en');
+define('DEFAULT_LANG', 'es');
 
 // Set default language if lang session do not exits.
 

@@ -115,9 +115,9 @@ class AdminController extends \BaseController {
             // and we save it in DB
             $project->save();
             
-            //Redirect to the creating projects view with an empty project, and a success message
+            //Redirect to the creating project view with an empty project, and a success message
             $project = new Project;
-            return View::make('admin/new_project')->with('project', $project)->with('success', '¡Añadido con éxito!');
+            return View::make('admin/new_project')->with('project', $project)->with('success', '¡ok!');
         }
         else
         {

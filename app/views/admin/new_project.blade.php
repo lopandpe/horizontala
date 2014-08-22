@@ -11,7 +11,7 @@
         
         @if($errors->count() > 0)
             <div class="col-md-6 col-md-offset-3 errores">
-                <p>The following errors have occurred:</p>
+                <p>{{ trans('commonTexts.errorValidation') }}</p>
                 <ul>
                     @foreach($errors->all() as $message)
                         <li>{{$message}}</li>
@@ -78,6 +78,62 @@
             <div class="col-md-10 col-md-offset-2">
                 <div class="row">
                     <div class="form-group col-md-4">
+                        {{ Form::label('about_es', trans("commonTexts.about_es") ) }}
+                        {{ Form::textarea('about_es', isset($data['about_es'])? $data['about_es'] : null, array('class' => 'form-control')) }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        {{ Form::label('about_en', trans("commonTexts.about_en") ) }}
+                        {{ Form::textarea('about_en', isset($data['about_en'])? $data['about_en'] : null, array('class' => 'form-control')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        {{ Form::label('structure_es', trans("commonTexts.structure_es") ) }}
+                        {{ Form::textarea('structure_es', isset($data['structure_es'])? $data['structure_es'] : null, array('class' => 'form-control')) }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        {{ Form::label('structure_en', trans("commonTexts.structure_en") ) }}
+                        {{ Form::textarea('structure_en', isset($data['structure_en'])? $data['structure_en'] : null, array('class' => 'form-control')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        {{ Form::label('objectives_es', trans("commonTexts.objectives_es") ) }}
+                        {{ Form::textarea('objectives_es', isset($data['objectives_es'])? $data['objectives_es'] : null, array('class' => 'form-control')) }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        {{ Form::label('objectives_en', trans("commonTexts.objectives_en") ) }}
+                        {{ Form::textarea('objectives_en', isset($data['objectives_en'])? $data['objectives_en'] : null, array('class' => 'form-control')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        {{ Form::label('lines_of_work_es', trans("commonTexts.lines_of_work_es") ) }}
+                        {{ Form::textarea('lines_of_work_es', isset($data['lines_of_work_es'])? $data['lines_of_work_es'] : null, array('class' => 'form-control')) }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        {{ Form::label('lines_of_work_en', trans("commonTexts.lines_of_work_en") ) }}
+                        {{ Form::textarea('lines_of_work_en', isset($data['lines_of_work_en'])? $data['lines_of_work_en'] : null, array('class' => 'form-control')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <div class="row">
+                    <div class="form-group col-md-4">
                         {{ Form::label('contact', trans("commonTexts.contact")) }}
                         {{ Form::textarea('contact', isset($data['contact'])? $data['contact'] : null, array('class' => 'form-control')) }}
                     </div>
@@ -88,10 +144,19 @@
                         {{ Form::text('geo_coordinates', isset($data['geo_coordinates'])? $data['geo_coordinates'] : null, array('placeholder' => '40.4124;-3.7001', 'class' => 'form-control')) }}
                         {{ Form::label('image_or_logo', trans("commonTexts.image_or_logo")) }}
                         {{ Form::file('image_or_logo') }}
+                        {{ Form::label('revised', trans("commonTexts.revised")) }}
+                        {{ Form::text('revised', isset($data['revised'])? $data['revised'] : null, array('class' => 'form-control', 'class' => 'datepicker')) }}
                     </div>
                 </div>
             </div>
         </div>
+        
+        <script>
+            $('.datepicker').datepicker({
+                language: "{{ trans('commonTexts.lang') }}"
+            });    
+        </script>
+        
         <div class="row">
             <div class="col-md-10 col-md-offset-2">
                 <div class="row">

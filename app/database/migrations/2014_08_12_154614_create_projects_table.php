@@ -18,6 +18,14 @@ class CreateProjectsTable extends Migration {
                     $table->string('short_description_en', 100)->nullable();
                     $table->text('description_es')->nullable();
                     $table->text('description_en')->nullable();
+                    $table->text('about_es')->nullable();
+                    $table->text('about_en')->nullable();
+                    $table->text('structure_es')->nullable();
+                    $table->text('structure_en')->nullable();
+                    $table->text('objectives_es')->nullable();
+                    $table->text('objectives_en')->nullable();
+                    $table->text('lines_of_work_es')->nullable();
+                    $table->text('lines_of_work_en')->nullable();
                     $table->string('resources_es', 150)->nullable();
                     $table->string('resources_en', 150)->nullable();
                     $table->string('base_address', 50)->nullable();
@@ -29,10 +37,11 @@ class CreateProjectsTable extends Migration {
                     $table->boolean('selfmanaged')->nullable();
                     $table->boolean('vegan')->nullable();
                     $table->boolean('released')->nullable();
+                    $table->date('revised')->nullable();
                     $table->timestamps();
                 });
     }
-
+    
     /**
      * Reverse the migrations.
      *

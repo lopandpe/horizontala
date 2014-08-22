@@ -12,7 +12,7 @@ return array(
     |
     */
 
-
+    'lang' => 'es',
     'add_project' => 'Añadir projecto',
     'name' => 'Nombre',
     'short_description' => 'Descripción corta',
@@ -23,6 +23,14 @@ return array(
     'resources_es' => 'Recursos (es)',
     'short_description_en' => 'Descripción corta (en)',
     'description_en' => 'Descripción (en)',
+    'about_en' => 'Sobre la iniciativa (en)',
+    'structure_en' => 'Estructura (en)',
+    'objectives_en' => 'Objetivos (en)',
+    'lines_of_work_en' => 'Líneas de trabajo (en)',
+    'about_es' => 'Sobre la iniciativa (es)',
+    'structure_es' => 'Estructura (es)',
+    'objectives_es' => 'Objetivos (es)',
+    'lines_of_work_es' => 'Líneas de trabajo (es)',
     'resources_en' => 'Recursos (en)',
     'base_address' => 'Dirección breve',
     'addresses' => 'Direcciones',
@@ -36,5 +44,7 @@ return array(
     'released' => 'Publicado',
     'created_at' => 'Creado el',
     'updated_at' => 'Actualizado el',
-    'create' => 'Crear'
+    'create' => 'Creado',
+    'revised' => 'Revisado',
+    'errorValidation' => 'Han aparecido los siguientes errores:'
 );

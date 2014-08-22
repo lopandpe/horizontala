@@ -11,7 +11,8 @@ return array(
     | views/home. 
     |
     */
-
+    
+    'lang' => 'en',
     'add_project' => ' Add a project',
     'name' => 'Name',
     'short_description' => 'Short description',
@@ -22,6 +23,14 @@ return array(
     'resources_es' => 'Resources (en)',
     'short_description_en' => 'Short description (es)',
     'description_en' => 'Description (es)',
+    'about_en' => 'About (en)',
+    'structure_en' => 'Structure (en)',
+    'objectives_en' => 'Objectives (en)',
+    'lines_of_work_en' => 'Lines of work (en)',
+    'about_es' => 'About (es)',
+    'structure_es' => 'Structure (es)',
+    'objectives_es' => 'Objectives (es)',
+    'lines_of_work_es' => 'Lines of work (es)',
     'resources_en' => 'Resources (es)',
     'base_address' => 'Base address',
     'addresses' => 'Addresses',
@@ -35,5 +44,7 @@ return array(
     'released' => 'Released',
     'created_at' => 'Created at',
     'updated_at' => 'Updated at',
-    'create' => 'Create'
+    'create' => 'Create',
+    'revised' => 'Revised at',
+    'errorValidation' => 'The following errors have occurred:'
 );
