@@ -40,6 +40,7 @@ class CreateProjectsTable extends Migration {
                     $table->date('revised')->nullable();
                     $table->timestamps();
                 });
+                DB::statement('ALTER TABLE projects ADD FULLTEXT search(name, description_es, description_en, resources_es, resources_en, base_address, addresses )');
     }
     
     /**
@@ -48,6 +49,10 @@ class CreateProjectsTable extends Migration {
      * @return void
      */
     public function down() {
+        Schema::table('projects', function($table) {
+            $table->dropIndex('search');
+        });
+
         Schema::drop('projects');
     }
 

@@ -3,9 +3,11 @@
 @section('content')
 
 <div id="searcher">
-    {{ Form::open(array('route' => 'search', 'method' => 'GET', 'role' => 'form', 'id' => 'searcher_input')) }}
+    <div id="mobile"></div>
+    {{ Form::model(null, array('route' => 'search', 'method' => 'get', 'id' => 'searcher_form')) }}
     
-    {{ Form::text('parameters', '', array('placeholder' => trans("commonTexts.placeholder"), 'id' => 'searcher_input')) }}
+    {{ Form::text('a', null, array('placeholder' => trans("commonTexts.placeholder"), 'id' => 'searcher_input', 'required')) }}
+    {{ Form::submit(trans("commonTexts.search")) }}
     
     {{ Form::close() }}
 </div>

@@ -10,7 +10,7 @@ class Project extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'projects';
-
+        protected $perPage = 2;
 
         protected $fillable = ['id', 'name', 'short_description_es', 'short_description_en', 'description_es', 'description_en', 'about_es', 'about_en', 'structure_es', 'structure_en', 'objectives_es', 'objectives_en', 'lines_of_work_es', 'lines_of_work_en', 'resources_es', 'resources_en', 'base_address', 'addresses', 'contact', 'email', 'geo_coordinates', 'image_or_logo', 'selfmanaged', 'vegan', 'released', 'revised'];        
         

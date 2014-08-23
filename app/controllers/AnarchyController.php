@@ -12,12 +12,31 @@ class AnarchyController extends \BaseController {
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the list of projects matching with the search.
      *
-     * @return Response
      */
-    public function create() {
-        //
+    public function search() {
+        //We get the parameters given in the input text box
+        $parameters = Input::get('a');
+
+        //We search in our projects table for rows that match with any of sentences
+        $query = Project::whereRaw("MATCH(name, description_es, description_en, resources_es, resources_en, base_address, addresses) AGAINST(? IN BOOLEAN MODE)", array($parameters));
+        
+        //If selfmanaged checkbox is selected, we make a filter
+        if (Input::get('selfmanaged')) {
+            $query->where('selfmanaged', 1);
+        }
+        
+        //If vegan checkbox is selected, we make a filter
+        if (Input::get('vegan')) {
+            $query->where('vegan', 1);
+        }
+        
+        //We ask the database for results, and we use LAravel pagination
+        $projects = $query->paginate(10);
+        
+        //We load the list.blade.php view
+        return View::make('list', compact('projects', 'parameters'));
     }
 
     /**
@@ -25,8 +44,11 @@ class AnarchyController extends \BaseController {
      *
      * @return Response
      */
-    public function store() {
-        //
+    public function viewProject($id) {
+        $project = Project::find($id);
+        
+        //We load the project.blade.php view
+        return View::make('project', compact('project'));
     }
 
     /**

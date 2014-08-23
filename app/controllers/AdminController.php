@@ -105,7 +105,7 @@ class AdminController extends \BaseController {
                 $file->move($dest, $name);
                 
                 //we save in DB the route of the file
-                $data['image_or_logo'] = '/assets/img/projects/'.$name.'.'.$extension;
+                $data['image_or_logo'] = '/assets/img/projects/'.$name;
             }
             
                 

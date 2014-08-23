@@ -153,6 +153,7 @@
         
         <script>
             $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd',
                 language: "{{ trans('commonTexts.lang') }}"
             });    
         </script>
@@ -162,15 +163,15 @@
                 <div class="row">
                     <div class="form-group col-md-3">
                         {{ Form::label('sefmanaged', trans("commonTexts.selfmanaged")) }}
-                        {{ Form::checkbox('selfmanaged', 'value') }}
+                        {{ Form::checkbox('selfmanaged') }}
                     </div>
                     <div class="form-group col-md-3">
                         {{ Form::label('vegan', trans("commonTexts.vegan")) }}
-                        {{ Form::checkbox('vegan', 'value') }}
+                        {{ Form::checkbox('vegan') }}
                     </div>
                     <div class="form-group col-md-3">
                         {{ Form::label('released', trans("commonTexts.released")) }}
-                        {{ Form::checkbox('released', 'value') }}
+                        {{ Form::checkbox('released') }}
                     </div>
                 </div>
             </div>

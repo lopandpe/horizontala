@@ -19,8 +19,11 @@ Route::get('login', array('as' => 'login', 'uses' => 'AdminController@showLogin'
 // validate form-login
 Route::post('login', array('as' => 'post_login', 'uses' => 'AdminController@postLogin'));
 
-// search controller
+// search
 Route::get('list', array('as' => 'search', 'uses' => 'AnarchyController@search'));
+
+// search
+Route::get('/{id}', array('as' => 'viewProject', 'uses' => 'AnarchyController@viewProject'));
 
 // AUTHENTICATION REQUIRED
 Route::group(array('before' => 'auth'), function()

@@ -64,5 +64,6 @@ return array(
     'calendar' => 'Calendario',
     'language' => 'Idioma',
     'links' => 'Enlaces',
-    'placeholder' => '¿Qué estás buscando?'
+    'placeholder' => '¿Qué estás buscando?',
+    'search' => 'Buscar'
 );

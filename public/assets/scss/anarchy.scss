@@ -30,15 +30,29 @@ body{
         position: relative;
         left: 62px;
         top: 236px;
-        #searcher_input{
-            width: 355px;
+        input{
             padding: 5px;
         }
+        #searcher_input{
+            width: 292px;
+        }
+    }
+    #mobile{
+        display: none;
+        background-image: url("../img/mobile.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        margin: 0px auto;
+        width: 95%;
+        padding-bottom: 29%;    
     }
 }
 @media(max-width: 500px){
     body{
         background-color: #FFF;
+    }
+    #wrapper{
+        padding-top: 40%;
     }
     #searcher{
         max-width: 100%;
@@ -50,8 +64,10 @@ body{
             #searcher_input{
                 width: 90%; 
                 margin: 0px auto;
-                margin-top: 40%;
             }
+        }
+        #mobile{
+            display: block;
         }
     }
 }

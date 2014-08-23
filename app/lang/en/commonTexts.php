@@ -63,5 +63,6 @@ return array(
     'calendar' => 'Calendar',
     'language' => 'Language',
     'links' => 'Links',
-    'placeholder' => 'What are you looking for?'
+    'placeholder' => 'What are you looking for?',
+    'search' => 'Go on!'
 );
