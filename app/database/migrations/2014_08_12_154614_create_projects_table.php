@@ -33,6 +33,7 @@ class CreateProjectsTable extends Migration {
                     $table->text('contact')->nullable();
                     $table->string('email')->nullable();
                     $table->string('geo_coordinates', 40)->nullable();
+                    $table->string('web', 80)->nullable();
                     $table->string('image_or_logo', 100)->nullable();
                     $table->boolean('selfmanaged')->nullable();
                     $table->boolean('vegan')->nullable();

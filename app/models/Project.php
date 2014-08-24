@@ -37,4 +37,21 @@ class Project extends Eloquent {
 
                 return false;
             }
+            public function isValidPhoto($data){
+                
+                $rules = array(
+                    'image_or_logo'    => array('required', 'mimes:jpeg,bmp,png')
+                );
+
+                $validator = Validator::make($data, $rules);
+
+                if ($validator->passes())
+                {
+                    return true;
+                }
+
+                $this->errors = $validator->errors();
+
+                return false;
+            }
 }

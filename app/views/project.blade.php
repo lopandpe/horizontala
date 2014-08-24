@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section ('title') {{ $project->name }} @stop
 @section('content')
 
 <?php

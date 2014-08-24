@@ -140,6 +140,8 @@
                 <div class="form-group col-md-4">
                     {{ Form::label('email', trans("commonTexts.email")) }}
                     {{ Form::text('email', isset($data['email'])? $data['email'] : null, array('class' => 'form-control')) }}
+                    {{ Form::label('web', 'Web') }}
+                    {{ Form::text('web', isset($data['web'])? $data['web'] : null, array('class' => 'form-control', 'class' => 'form-control')) }}
                     {{ Form::label('geo_coordinates', trans("commonTexts.geo_coordinates")) }}
                     {{ Form::text('geo_coordinates', isset($data['geo_coordinates'])? $data['geo_coordinates'] : null, array('placeholder' => '40.4124;-3.7001', 'class' => 'form-control')) }}
                     {{ Form::label('image_or_logo', trans("commonTexts.image_or_logo")) }}

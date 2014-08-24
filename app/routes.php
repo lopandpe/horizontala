@@ -17,7 +17,7 @@ Route::group(array('before' => 'auth'), function()
     Route::post('admin/new', array('as' => 'post_project', 'uses' => 'AdminController@postProject'));
     Route::get('admin/edit/{id}', array('as' => 'edit_project', 'uses' => 'AdminController@editProject'));
     Route::put('admin/edit/{id}', array('as' => 'post_edit_project', 'uses' => 'AdminController@postEditProject'));
-    Route::put('admin/edit/{id}/logo', array('as' => 'edit_logo', 'uses' => 'AdminController@postEditLogo'));
+    Route::put('admin/edit/{id}/logo', array('as' => 'edit_logo', 'uses' => 'AdminController@postLogo'));
     Route::delete('admin/delete/{id}', array('as' => 'delete_project', 'uses' => 'AdminController@deleteProject'));
     Route::get('admin/list', array('as' => 'admin_search', 'uses' => 'AdminController@search'));
     

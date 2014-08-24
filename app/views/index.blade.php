@@ -1,4 +1,5 @@
 @extends('layout')
+@section ('title') Horizontala @stop
 
 @section('content')
 <div class="clearfix"></div>

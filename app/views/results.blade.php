@@ -26,6 +26,7 @@
                         <div class="col-sm-12 more_info">
                             <div class="col-sm-8">
                                 <div class="row"><p><strong>{{ trans('commonTexts.description') }}</strong>:<br /> {{ $project->$long_desc }}</p></div>
+                                <div class="row"><p><strong>Web</strong>:<br /> {{ $project->web }}</p></div>
                                 
                             </div>
                             <div class="col-sm-4">
@@ -40,9 +41,9 @@
                 </div>
                 <div class="col-md-4 col-sm-2 hidden-xs">
                     @if ((isset($project->image_or_logo)) && (strlen($project->image_or_logo) > 1))
-                    <img class="img-responsive project-image img-circle" src="{{ asset($project->image_or_logo) }}"/>
+                    <div class="img-responsive project-image img-circle" style="background-image:url('{{ asset($project->image_or_logo) }}')"></div>
                     @else
-                    <img class="img-responsive project-image img-circle" src="{{ asset('assets/img/no-foto.png') }}"/>
+                    <div class="img-responsive project-image img-circle" style="background-image:url('{{ asset('assets/img/no-foto.png') }}')"></div>
                     @endif
                 </div>
                 <a class="see_more btn btn-info" href="#">Ver más (FT)</a>

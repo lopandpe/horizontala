@@ -91,7 +91,10 @@ class AdminController extends \BaseController {
 
                 //We want to save the image at /assets/img/projects with the name of the project without white spaces
                 $name = str_replace(' ', '-', $data['name']);
-
+                
+                $charset='UTF-8'; // o 'UTF-8ISO-8859-1'
+                $name = iconv($charset, 'ASCII//TRANSLIT', $name);
+                $name = str_replace('\'', '', $name);
 
                 //concat the extension
                 $name .= '.' . $extension;
@@ -157,7 +160,11 @@ class AdminController extends \BaseController {
                 //We want to save the image at /assets/img/projects with the name of the project without white spaces
                 $name = str_replace(' ', '-', $data['name']);
 
-
+                
+                $charset='UTF-8'; // o 'UTF-8ISO-8859-1'
+                $name = iconv($charset, 'ASCII//TRANSLIT', $name);
+                $name = str_replace('\'', '', $name);
+                
                 //concat the extension
                 $name .= '.' . $extension;
 
@@ -197,7 +204,7 @@ class AdminController extends \BaseController {
         $data = Input::all();
         
         // isValid is defined in Project.php
-        if ($project->isValid($data, $id)) {
+        if ($project->isValidPhoto($data, $id)) {
             if (is_object(Input::file('image_or_logo')) && Input::file('image_or_logo')->getSize() > 0) {
 
                 $file = Input::file('image_or_logo');
@@ -205,9 +212,12 @@ class AdminController extends \BaseController {
                 $extension = $file->getClientOriginalExtension();
 
                 //We want to save the image at /assets/img/projects with the name of the project without white spaces
-                $name = str_replace(' ', '-', $data['name']);
+                $name = str_replace(' ', '-', $project->name);
 
-
+                $charset='UTF-8'; // o 'UTF-8ISO-8859-1'
+                $name = iconv($charset, 'ASCII//TRANSLIT', $name);
+                $name = str_replace('\'', '', $name);
+                
                 //concat the extension
                 $name .= '.' . $extension;
 

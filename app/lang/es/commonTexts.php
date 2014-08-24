@@ -77,5 +77,8 @@ return array(
     'share' => 'Comparte esta página',
     'delete' => 'Borrar',
     'edit' => 'Editar',
-    'changeLogo' => 'Cambiar imagen'
+    'changeLogo' => 'Cambiar imagen',
+    'deleteText' => 'Se va a borrar el projecto. Para confirmar pulsa el botón',
+    'newProject' => 'Nuevo proyecto',
+    'no_results' => 'SIN RESULTADOS. Prueba otra vez con una prueba más específica. Puede que el proyecto que buscas haya sido eliminado.'
 );

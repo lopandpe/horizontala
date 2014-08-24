@@ -1,6 +1,6 @@
 @extends ('admin.layout')
 
-@section ('title') {{ trans('commonTexts.add_project') }} @stop
+@section ('title') Admin @stop
 
 @section ('content')
 
@@ -38,7 +38,7 @@
 
         <h2>{{ $success or '' }}</h2>
 
-        <a href="{{ route('new_project') }}" class="new_project btn btn-info">NUEVO PROYECTO (FT)</a>
+        <a href="{{ route('new_project') }}" class="new_project btn btn-info">{{ trans('commonTexts.newProject') }}</a>
         @foreach ($projects as $project)
         <div class="admin_project">
             <div class="row">
@@ -47,15 +47,17 @@
                 </div>
                 <div class="col-xs-3">
                     <a class="btn btn-lg btn-success" href="{{ route('edit_project', array('id' => $project->id)) }}">{{ trans('commonTexts.edit') }}</a>
-                    <a class="btn btn-lg btn-danger" href="">{{ trans('commonTexts.delete') }}</a>
+                    <a class="btn btn-lg btn-danger" data-toggle="modal" href="#project_{{ $project->id }}">{{ trans('commonTexts.delete') }}</a>
                 </div>
                 <div class="col-xs-6">
                     <div class='col-xs-3'>
+
                         @if ((isset($project->image_or_logo)) && (strlen($project->image_or_logo) > 1))
-                            <img class="img-responsive project-image img-circle" src="{{ asset($project->image_or_logo) }}"/>
+                        <div class="img-responsive project-image img-circle" style="background-image:url('{{ asset($project->image_or_logo) }}')"></div>
                         @else
-                            <img class="img-responsive project-image img-circle" src="{{ asset('assets/img/no-foto.png') }}"/>
+                        <div class="img-responsive project-image img-circle" style="background-image:url('{{ asset('assets/img/no-foto.png') }}')"></div>
                         @endif
+
                     </div>
                     <div class='col-xs-9'>
                         {{ Form::open(array('route' => array('edit_logo', $project->id), 'method' => 'PUT', 'files' => true)) }}
@@ -63,6 +65,22 @@
                         {{ Form::button(trans("commonTexts.changeLogo"), array('type' => 'submit', 'class' => 'btn  btn-sm btn-primary')) }}                    {{ Form::close() }}
                     </div>
                 </div>
+                <div class="modal fade" id="project_{{ $project->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">{{ $project->name }}</h4>
+                            </div>
+                            <div class="modal-body">
+                                {{ trans('commonTexts.deleteText') }}: <br />
+                                {{ Form::open(array('route' => array('delete_project', $project->id), 'method' => 'DELETE', 'files' => true)) }}
+                                {{ Form::button(trans('commonTexts.delete'), array('type' => 'submit', 'class' => 'btn btn-lg btn-danger')) }}                    
+                                {{ Form::close() }}
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
 
             </div>
         </div>

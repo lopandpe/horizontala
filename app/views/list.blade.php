@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section ('title') Horizontala @stop
 @section('content')
 
 <div id="madrid"><img class="img-responsive" src="{{ asset('assets/img/madrid.png') }}" /></div>
@@ -13,7 +13,7 @@
         <div id="results">
             <div id="no_match" class="row">
                 <div class="col-xs-12">
-                    <h3>NO HAY RESULTADOS QUE COINCIDAN CON LA BÚSQUEDA (FT)</h3>
+                    <h3>{{ trans('commonTexts.no_results') }}</h3>
                 </div>
             </div>
         </div>

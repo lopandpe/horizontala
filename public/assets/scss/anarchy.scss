@@ -87,6 +87,10 @@ body{
     }
     .project-image{
         height: 100px;
+        width: 100px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
     .data_project{
         min-height: 100px;
@@ -278,8 +282,12 @@ body{
     }
     .admin_project{
         padding: 20px;
-        img{
+        .project-image{
             height: 75px;
+            width: 75px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
             
         }
     }

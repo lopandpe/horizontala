@@ -76,5 +76,8 @@ return array(
     'share' => 'Share this page',
     'delete' => 'Delete',
     'edit' => 'Edit',
-    'changeLogo' => 'Change image'
+    'changeLogo' => 'Change image',
+    'deleteText' => 'The project is going to be deleted. To confirm it, press the button',
+    'newProject' => 'New project',
+    'no_results' => 'NO RESULTS. Try being more specific. It is possible that the project had been removed.'
 );
