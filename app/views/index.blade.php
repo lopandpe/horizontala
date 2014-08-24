@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-
+<div class="clearfix"></div>
 <div id="searcher">
     <div id="mobile"></div>
     {{ Form::model(null, array('route' => 'search', 'method' => 'get', 'id' => 'searcher_form')) }}

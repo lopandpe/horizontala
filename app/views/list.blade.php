@@ -1,25 +1,29 @@
 @extends('layout')
 
 @section('content')
-<div id='research'>
-    {{ Form::model(null, array('route' => 'search', 'method' => 'get', 'id' => 'researcher_form')) }}
-    
-    {{ Form::text('a', null, array('placeholder' => trans("commonTexts.placeholder"), 'id' => 'researcher_input', 'required')) }}
 
-    {{ Form::label('sefmanaged', trans("commonTexts.selfmanaged")) }}
-    {{ Form::checkbox('selfmanaged') }}
-    
-    {{ Form::label('vegan', trans("commonTexts.vegan")) }}
-    {{ Form::checkbox('vegan') }}
-    
-    {{ Form::submit(trans("commonTexts.search")) }}
-    
-    {{ Form::close() }}
+<div id="madrid"><img class="img-responsive" src="{{ asset('assets/img/madrid.png') }}" /></div>
+
+
+@include('research')
+
+@if($projects->isEmpty())
+
+    <div id="list" class="container">
+        <div id="results">
+            <div id="no_match" class="row">
+                <div class="col-xs-12">
+                    <h3>NO HAY RESULTADOS QUE COINCIDAN CON LA BÚSQUEDA (FT)</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@else
+
+    @include('results')
+
+@endif
+
 </div>
-<div id="list">
-@foreach ($projects as $project)
-    <p>{{ $project->name }} <a href="{{ URL::to('/', $project->id) }}">Ver más (FT)</a></p>
-@endforeach
-</div>
-{{ $projects->appends(array('a' => $parameters))->links() }}
 @stop

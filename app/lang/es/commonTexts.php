@@ -18,6 +18,10 @@ return array(
     'short_description' => 'Descripción corta',
     'description' => 'Descripción',
     'resources' => 'Recursos',
+    'about' => 'Sobre la iniciativa',
+    'structure' => 'Estructura',
+    'objectives' => 'Objetivos',
+    'lines_of_work' => 'Líneas de trabajo',
     'short_description_es' => 'Descripción corta (es)',
     'description_es' => 'Descripción (es)',
     'resources_es' => 'Recursos (es)',
@@ -65,5 +69,13 @@ return array(
     'language' => 'Idioma',
     'links' => 'Enlaces',
     'placeholder' => '¿Qué estás buscando?',
-    'search' => 'Buscar'
+    'search' => 'Buscar',
+    'see_more' => 'Ver más',
+    'see_much_more' => 'Ver mucho más',
+    'higherMap' => 'Ver el mapa más grande',
+    'goBack' => 'Volver',
+    'share' => 'Comparte esta página',
+    'delete' => 'Borrar',
+    'edit' => 'Editar',
+    'changeLogo' => 'Cambiar imagen'
 );

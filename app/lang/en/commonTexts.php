@@ -18,6 +18,10 @@ return array(
     'short_description' => 'Short description',
     'description' => 'Description',
     'resources' => 'Resources',
+    'about' => 'About the project',
+    'structure' => 'Structure',
+    'objectives' => 'Objectives',
+    'lines_of_work' => 'Lines of work',
     'short_description_es' => 'Short description (en)',
     'description_es' => 'Description (en)',
     'resources_es' => 'Resources (en)',
@@ -64,5 +68,13 @@ return array(
     'language' => 'Language',
     'links' => 'Links',
     'placeholder' => 'What are you looking for?',
-    'search' => 'Go on!'
+    'search' => 'Go on!',
+    'see_more' => 'See more',
+    'see_much_more' => 'Seemuch more',
+    'higherMap' => 'See a higher map',
+    'goBack' => 'Go back',
+    'share' => 'Share this page',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'changeLogo' => 'Change image'
 );

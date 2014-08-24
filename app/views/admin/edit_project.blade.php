@@ -20,7 +20,7 @@
     </div>
     @endif
 
-    {{ Form::model($project, array('route' => 'post_project', 'method' => 'POST', 'role' => 'form', 'files' => true)) }}
+    {{ Form::model($project, array('route' => array('post_edit_project', $project->id), 'method' => 'PUT', 'role' => 'form', 'files' => true)) }}
 
     <div class="row">
         <div class="col-md-10 col-md-offset-2">
@@ -142,8 +142,6 @@
                     {{ Form::text('email', isset($data['email'])? $data['email'] : null, array('class' => 'form-control')) }}
                     {{ Form::label('geo_coordinates', trans("commonTexts.geo_coordinates")) }}
                     {{ Form::text('geo_coordinates', isset($data['geo_coordinates'])? $data['geo_coordinates'] : null, array('placeholder' => '40.4124;-3.7001', 'class' => 'form-control')) }}
-                    {{ Form::label('image_or_logo', trans("commonTexts.image_or_logo")) }}
-                    {{ Form::file('image_or_logo') }}
                     {{ Form::label('revised', trans("commonTexts.revised")) }}
                     {{ Form::text('revised', isset($data['revised'])? $data['revised'] : null, array('class' => 'form-control', 'class' => 'datepicker')) }}
                 </div>
@@ -179,7 +177,7 @@
 
     <div class="row">
         <div class="col-md-2 col-md-offset-5">
-            {{ Form::button('Crear proyecto', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    
+            {{ Form::button('Go!', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    
         </div>
     </div>
     {{ Form::close() }}

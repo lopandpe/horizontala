@@ -48,4 +48,12 @@ $(document).ready(function() {
     $('#wrapper').on('resize change', function() {
         colocarPie();
     });
+    
+    $(".see_more").click(function(event){
+        event.preventDefault();
+        $('.more_info').hide();
+        $('.see_more').show();
+        $(this).parent().find('.more_info').fadeIn(500);
+        $(this).hide();
+    });
 });

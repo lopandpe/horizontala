@@ -16,26 +16,27 @@ class AnarchyController extends \BaseController {
      *
      */
     public function search() {
-        //We get the parameters given in the input text box
         $parameters = Input::get('a');
-
-        //We search in our projects table for rows that match with any of sentences
         $query = Project::whereRaw("MATCH(name, description_es, description_en, resources_es, resources_en, base_address, addresses) AGAINST(? IN BOOLEAN MODE)", array($parameters));
-        
-        //If selfmanaged checkbox is selected, we make a filter
+
+      
+
+
         if (Input::get('selfmanaged')) {
             $query->where('selfmanaged', 1);
         }
-        
-        //If vegan checkbox is selected, we make a filter
+
         if (Input::get('vegan')) {
             $query->where('vegan', 1);
         }
         
-        //We ask the database for results, and we use LAravel pagination
-        $projects = $query->paginate(10);
+//          $query->orderByRaw("MATCH(name, description_es, description_en, resources_es, resources_en, base_address, addresses) AGAINST(? IN BOOLEAN MODE) DESC", array($parameters));
+//        $query->orderBy(DB::raw("MATCH(name, description_es, description_en, resources_es, resources_en, base_address, addresses) AGAINST(".$parameters." IN BOOLEAN MODE)"));
+        $query->orderBy(DB::raw("MATCH(name, description_es, description_en, resources_es, resources_en, base_address, addresses) AGAINST('$parameters' IN BOOLEAN MODE)"), "DESC");
         
-        //We load the list.blade.php view
+        $projects = $query->paginate(5);
+        
+        
         return View::make('list', compact('projects', 'parameters'));
     }
 
@@ -45,8 +46,13 @@ class AnarchyController extends \BaseController {
      * @return Response
      */
     public function viewProject($id) {
+        
         $project = Project::find($id);
         
+        if(!isset($project)){
+            return View::make('no_project');
+        }
+                    
         //We load the project.blade.php view
         return View::make('project', compact('project'));
     }

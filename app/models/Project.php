@@ -17,10 +17,10 @@ class Project extends Eloquent {
         
             public $errors;
     
-            public function isValid($data){
+            public function isValid($data, $id = 0){
                 
                 $rules = array(
-                    'name'     => array('required', 'unique:projects'),
+                    'name'     => array('required', 'unique:projects,name' . ($id ? ",$id" : '')),
                     'email'    => array('email'),
                     'image_or_logo'    => 'mimes:jpeg,bmp,png',
                     'revised' => array('date')
